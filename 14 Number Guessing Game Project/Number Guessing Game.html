@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Number Guessing Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: lightcyan;
+        }
+        .title {
+            font-size: 36;
+            font-weight: bold;
+            color: midnightblue;
+            text-align: center;
+        }
+        .title2 {
+            color: midnightblue;
+            text-align: center;
+        }
+        #numberbox {
+            margin-left: 830px;
+        }
+        table button {
+            margin-left: 880px;
+        }
+        #showMessage {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <br><br><br><br>
+    <h1 class="title" id="header">Number Guessing Game</h1>
+    <br><br><br><br>
+    <h2 class="title2">Try Guessing Number from 0 to 10</h2>
+    <br><br><br><br>
+    <table width="60%" cellpadding="10" cellspacing="0">
+        <tr>
+            <td>
+                <div class="col-xl-2" id="numberbox">
+                    <input class="form-control" id="typeNumber" type="number" value="0">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div>
+                    <button onclick="guessNumber()" class="btn btn-info" style="font-weight: bold;">Submit</button>
+                </div>
+            </td>
+            <p id="showMessage" style="font-size: 24px;"></p>
+        </tr>
+    </table>
+
+    <script>
+        let n;
+        let x = Math.random()*10;
+        const guessNumber = (n) => {
+            n = document.getElementById("typeNumber").value;
+            r = Math.floor(x);
+            console.log(r);
+
+            if (n > r) {
+                document.getElementById("showMessage").innerHTML = "ต่ำกว่า";
+            } else if (n < r) {
+                document.getElementById("showMessage").innerHTML = "สูงกว่า";
+            } else if (n == r) {
+                document.getElementById("showMessage").innerHTML = "ถูกต้องนะคร๊าบบ !!";
+            }
+        };
+    </script>
+</body>
+</html>
